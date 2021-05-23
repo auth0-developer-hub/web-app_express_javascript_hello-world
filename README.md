@@ -2,7 +2,7 @@
 
 You can use this sample project to learn how to secure a simple Express.js web application using Auth0.
 
-![Hello, Express.js World!](https://images.ctfassets.net/23aumh6u8s0i/VXjSF6g8d3S70ODNPgAle/fc025c1373e47fb4f4719f6b3c937c4d/hello-express-pug.png)
+![Hello, Express.js World!](https://images.ctfassets.net/23aumh6u8s0i/4Vm7S2OxumaJQOAFW3LYBB/e5fa555d237da66d7917bf335b0baaed/hello-express-pug.png)
 
 The `starter` branch offers a functional application that consumes local data to hydrate the user interface. All the starter application routes are public.
 
