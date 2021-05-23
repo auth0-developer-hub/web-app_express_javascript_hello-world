@@ -1,0 +1,10 @@
+mixin NextStep(props)
+  - title = props.title;
+  - description = props.description;
+  - resourceUrl = props.resourceUrl;
+  - icon = props.icon;
+  a.next-step(href=resourceUrl, target="_blank", rel="noopener noreferrer")
+    h3.next-step__headline
+      img.next-step__icon(src=icon, alt="external link icon")
+      span= title
+    p.next-step__description= description

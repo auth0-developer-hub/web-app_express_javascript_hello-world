@@ -1,0 +1,14 @@
+mixin HeroBanner
+  script.
+    const openQuickStart = function () {
+      window.open('https://auth0.com/docs/quickstart/webapp/express', '_blank', 'noopener noreferrer');
+    };
+  .hero-banner
+    img.hero-banner__logo(src=logo, alt="Pug logo")
+    h1.hero-banner__headline Hello, Express.js World!
+    p.hero-banner__description
+      | This is a sample application that demonstrates the authentication flow for
+      | a Vue app using&nbsp;
+      strong Auth0
+      | .
+    button.button.button--secondary(onclick="openQuickStart()") Check out the Express.js Quickstart →

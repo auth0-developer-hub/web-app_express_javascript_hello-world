@@ -1,0 +1,20 @@
+mixin NavBar
+  .nav-bar__container
+    nav.nav-bar
+      .nav-bar__brand
+        a(href="/")
+          img.nav-bar__logo(
+            src="https://images.ctfassets.net/23aumh6u8s0i/1UiaijF2PoaHIfcaIMRWYZ/cba84a2df9ba67f48e80aa117d0c78a3/auth0-shield.svg",
+            alt="Auth0 shield logo",
+            width="35.98",
+            height="40"
+          )
+      .nav-bar__tabs
+        a.nav-bar__tab(
+          href="/profile",
+          class=activeRoute === '/profile' ? 'nav-bar__tab--active' : ''
+        ) Profile
+        a.nav-bar__tab(
+          href="/external-api",
+          class=activeRoute === '/external-api' ? 'nav-bar__tab--active' : ''
+        ) External API

@@ -1,0 +1,18 @@
+extends ../components/page-layout
+
+include ../components/code-snippet
+
+block page-layout-content
+  .content-layout
+    h1.content__title Profile
+    .content__body
+      p
+        strong Only authenticated users can access this page.
+      .profile-grid
+        .profile__header
+          img.profile__avatar(src=user.picture, alt="Profile")
+          .profile__headline
+            h2.profile__title= user.name
+            span.profile__description= user.email
+        .profile__details
+          +CodeSnippet(code)

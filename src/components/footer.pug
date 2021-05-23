@@ -1,0 +1,45 @@
+include ./hyperlink
+
+mixin Footer
+  -
+    var resourceList = [
+      {path: "https://auth0.com/why-auth0/", label: "Why Auth0"},
+      {path: "https://auth0.com/docs/get-started", label: "How It Works"},
+      {path: "https://auth0.com/blog/developers/", label: "Developer Blog" },
+      {path: "https://auth0.com/contact-us", label: "Contact an Expert"},
+    ];
+  script.
+    const signUp = function () {
+      window.open('https://auth0.com/signup', '_blank', 'noopener noreferrer');
+    };
+  footer.footer
+    .footer-grid
+      .footer-grid__info
+        .footer-info__message
+          p.footer-message__headline
+            span This sample application is brought to you by&nbsp;
+            +Hyperlink("https://auth0.com/")
+              span Auth0
+          p.footer-message__description
+            +Hyperlink("https://auth0.com/docs/quickstarts/")
+              span
+                | Securely implement authentication using Auth0 on
+                | any stack and any device&nbsp;
+              u in less than 10 minutes
+        .footer-info__button
+          button.button.button--secondary(onClick="signUp()") Create Free Auth0 Account
+        .footer-info__resource-list
+          each resource in resourceList
+            .footer-info__resource-list-item
+              +Hyperlink(resource.path)
+                span= resource.label
+      .footer-grid__brand
+        .footer-brand
+          img.footer-brand__logo(
+            src="https://images.ctfassets.net/23aumh6u8s0i/1UiaijF2PoaHIfcaIMRWYZ/cba84a2df9ba67f48e80aa117d0c78a3/auth0-shield.svg",
+            alt="Auth0",
+            width="20",
+            height="22.22"
+          )
+          +Hyperlink("https://auth0.com/")
+            span Auth0 Inc
