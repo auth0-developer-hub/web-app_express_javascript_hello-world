@@ -1,3 +1,5 @@
+include ./buttons/authentication-button
+
 mixin NavBar
   .nav-bar__container
     nav.nav-bar
@@ -18,3 +20,5 @@ mixin NavBar
           href="/external-api",
           class=activeRoute === '/external-api' ? 'nav-bar__tab--active' : ''
         ) External API
+      .nav-bar__actions
+        +AuthenticationButton(isAuthenticated)
