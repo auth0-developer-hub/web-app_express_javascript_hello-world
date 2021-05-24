@@ -1,9 +1,5 @@
 mixin HeroBanner
   - var logo = 'https://images.ctfassets.net/23aumh6u8s0i/5ag0GOEY8gO8K28Cu2x6kK/f924bd4dada2dc8f775eda7f7dec9910/pug.svg';
-  script.
-    const openQuickStart = function () {
-      window.open('https://auth0.com/docs/quickstart/webapp/express', '_blank', 'noopener noreferrer');
-    };
   .hero-banner
     img.hero-banner__logo(src=logo, alt="Pug logo")
     h1.hero-banner__headline Hello, Express.js World!
@@ -12,4 +8,5 @@ mixin HeroBanner
       | an Express.js web app using&nbsp;
       strong Auth0
       | .
-    button.button.button--secondary(onclick="openQuickStart()") Check out the Express.js Quickstart →
+    button#qsButton.button.button--secondary Check out the Express.js Quickstart →
+  script(src="hero-banner.js")

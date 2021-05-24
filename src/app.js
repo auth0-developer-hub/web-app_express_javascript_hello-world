@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const helmet = require("helmet");
 const { auth } = require("express-openid-connect");
 const { messagesRouter } = require("./messages/messages.router");
 const { pagesRouter } = require("./pages/pages.router");
@@ -20,6 +21,21 @@ const {
 app.set("views", path.join(__dirname, "pages", "views"));
 app.set("view engine", "pug");
 
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "img-src": [
+          "self",
+          "https://cdn.auth0.com",
+          "https://images.ctfassets.net",
+          "https://*.googleusercontent.com",
+        ],
+      },
+    },
+  })
+);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(

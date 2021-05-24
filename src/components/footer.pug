@@ -8,10 +8,6 @@ mixin Footer
       {path: "https://auth0.com/blog/developers/", label: "Developer Blog" },
       {path: "https://auth0.com/contact-us", label: "Contact an Expert"},
     ];
-  script.
-    const signUp = function () {
-      window.open('https://auth0.com/signup', '_blank', 'noopener noreferrer');
-    };
   footer.footer
     .footer-grid
       .footer-grid__info
@@ -27,7 +23,7 @@ mixin Footer
                 | any stack and any device&nbsp;
               u in less than 10 minutes
         .footer-info__button
-          button.button.button--secondary(onClick="signUp()") Create Free Auth0 Account
+          button#signupButton.button.button--secondary Create Free Auth0 Account
         .footer-info__resource-list
           each resource in resourceList
             .footer-info__resource-list-item
@@ -43,3 +39,4 @@ mixin Footer
           )
           +Hyperlink("https://auth0.com/")
             span Auth0 Inc
+  script(src="footer.js")
